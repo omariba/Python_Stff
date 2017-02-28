@@ -2,7 +2,7 @@ class kwargscheck:
 	def __init__(self,**kwargs):
 		self.args = kwargs
 	def print_args(self):
-		for key,value in self.args:
+		for key,value in self.args.iteritems():
 			print key
 			print value
 
