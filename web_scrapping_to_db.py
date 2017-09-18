@@ -6,5 +6,8 @@ fin_url = "http://"+u_url
 
 r_data = requests.get(fin_url)
 html = r_data.text
+soup = BeautifulSoup(html,'html.parser')
 
-print html
+pics = soup.findAll('div',{'class':'sku -gallery'})
+for prod in pics:
+	print prod.text
