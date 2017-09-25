@@ -9,5 +9,10 @@ html = r_data.text
 soup = BeautifulSoup(html,'html.parser')
 
 pics = soup.findAll('div',{'class':'sku -gallery'})
+
 for prod in pics:
-	print prod.text
+	each_lap = prod.findAll('h2',{'class':'title'})
+	for lap_name in each_lap:
+		name = lap_name.findAll('span',{'class':'name'})
+		for i in name:
+			print i.text
