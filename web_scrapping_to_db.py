@@ -12,7 +12,11 @@ pics = soup.findAll('div',{'class':'sku -gallery'})
 
 for prod in pics:
 	each_lap = prod.findAll('h2',{'class':'title'})
-	for lap_name in each_lap:
+	each_lap_price = prod.findAll('div',{'class':'price-container clearfix'})
+	for lap_name,lap_price in zip(each_lap,each_lap_price):
 		name = lap_name.findAll('span',{'class':'name'})
-		for i in name:
-			print i.text
+		price_P = lap_price.findAll('span',{'class':'price-box ri'})
+		for price in price_P:
+			now_price = price.findAll('span',{'class':'price'})
+			for real_name,raw_price in zip(name,now_price):
+				print real_name.text,' -- ',raw_price.text
