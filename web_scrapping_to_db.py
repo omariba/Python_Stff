@@ -1,5 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
+import MySQLdb as mysql
+
+conn = mysql.connect('localhost','root',"",'test_nelly')
+edit = conn.cursor()
 
 u_url = raw_input("enter url(without http://): ")
 fin_url = "http://"+u_url
@@ -20,3 +24,7 @@ for prod in pics:
 			now_price = price.findAll('span',{'class':'price'})
 			for real_name,raw_price in zip(name,now_price):
 				print real_name.text,' -- ',raw_price.text
+				query = '''insert into laptops(`Name and Model`,Price)value(%s,%s);''' %(real_name.text,raw_price.text)
+				edit.execute(query)
+conn.commit()
+conn.close()
