@@ -8,12 +8,19 @@ def tests():
 
 #tests()
 #p.play(':d4')
+#for i in range(10):
+#	p.sample('drum_heavy_kick')
+#	p.sleep(0.5)
+#	p.sample('drum_snare_hard')
+#	p.sleep(0.5)
+#	p.sample('drum_heavy_kick')
+#	p.sleep(0.5)
+#	p.play(random.randrange(60,80))
+#	p.sleep(0.5)
+
 for i in range(10):
-	p.sample('drum_heavy_kick')
 	p.sleep(0.5)
-	p.sample('drum_snare_hard')
+	p.sample('drum_cymbal_closed')
 	p.sleep(0.5)
-	p.sample('drum_heavy_kick')
-	p.sleep(0.5)
-	p.play(random.randrange(60,80))
-	p.sleep(0.5)
+	p.sample('drum_cymbal_pedal')
+	p.sleep(0.1)
