@@ -3,7 +3,7 @@ b = 0
 e = 8
 for i in range(8):
     if e <= 71:
-		board.append(range(b,e))
+    	board.append(range(b,e))
 		b = e
 		e += 8
 
@@ -35,7 +35,14 @@ def move_count(start,stop):
 	if column_dif(start,stop) == 2 and abs(start-stop) == 15:
     			return 1
 	if abs(start-stop) not in one:
+    		if start < 48:
+				
     		return 0
 
 print move_count(0,1)
 print board
+
+#To do
+# - Find all possible next positions x-wards(column) +2,-2,+1,-1
+# - Find all possible next positions y wards(row) +6,-6,+10,-10,+17,-17,+15,-15
+# - Do this with all new positions until you arrive at destination
