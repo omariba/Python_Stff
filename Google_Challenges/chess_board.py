@@ -4,8 +4,8 @@ e = 8
 for i in range(8):
     if e <= 71:
     	board.append(range(b,e))
-		b = e
-		e += 8
+	b = e
+	e += 8
 
 # if 4 in board[0:1][0]:
 #     print board[0:1][0].index(4)
@@ -36,8 +36,8 @@ def move_count(start,stop):
     			return 1
 	if abs(start-stop) not in one:
     		if start < 48:
-				
-    		return 0
+    					
+    			return 0
 
 print move_count(0,1)
 print board
